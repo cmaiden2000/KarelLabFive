@@ -7,9 +7,12 @@ import kareltherobot.*;
  */
 public class DangerousBot extends Robot
 {
-    public DangerousBot(int st, int av, Direction dir, int numBeepers) {
+    int beepers;
+    
+    DangerousBot(int st, int av, Direction dir, int numBeepers) {
         super(st, av, dir, numBeepers);
-        int beepers;
+        
+        
         
     }
     
@@ -22,13 +25,20 @@ public class DangerousBot extends Robot
                 pickBeeper();
                 beepers ++;
             }
-            if (beepers % 2 = 0){
+            if (beepers % 2 == 0){
                 turnRight();
+                move();
+                turnOff();
             }
             else{
                 turnLeft();
+                move();
+                turnOff();
+                
             }
+            
         }
+        return true;
     }
     public void turnRight(){
         turnLeft();
